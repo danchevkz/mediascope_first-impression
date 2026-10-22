@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "model_id": "Qwen/Qwen3.5-4B",
+    "task": "bias",
+    "quant": "4bit",
+    "skip_vision_modules": [
+      "visual",
+      "vision_model",
+      "vision_tower"
+    ],
+    "thinking": "off",
+    "require_full_image": true,
+    "preprocessing": {
+      "tile_height": 1400,
+      "max_tiles": 6,
+      "max_width": 1024
+    },
+    "prompts": {
+      "bias": "You are an expert media analyst applying Media Bias/Fact Check (MBFC) methodology.\n\nBelow are vertical slices (top to bottom) of a single full-page screenshot of the\nhomepage of a media outlet. Judge its POLITICAL BIAS from what\nyou can see \u2014 story selection, framing, loaded language, which side is favored.\n\nChoose EXACTLY ONE label:\n- LEFT\n- LEFT-CENTER\n- LEAST BIASED\n- RIGHT-CENTER\n- RIGHT\n\nOutput ONLY the label text, nothing else."
+    },
+    "arguments": {
+      "model": "qwen35",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "thinking": "off",
+      "task": "bias",
+      "quant": "4bit",
+      "quant_skip_vision_modules": null,
+      "target_modules": "all-linear",
+      "lora_r": 16,
+      "lr": 0.0002,
+      "warmup_steps": 16,
+      "num_epochs": 3.0,
+      "max_steps": -1,
+      "batch_size": 1,
+      "grad_accum": 16,
+      "checkpoint_steps": 25,
+      "save_total_limit": 3,
+      "limit": null,
+      "tile_height": 1400,
+      "max_tiles": 6,
+      "max_width": 1024,
+      "require_full_image": true,
+      "seed": 42,
+      "num_workers": 4,
+      "no_grad_checkpointing": false
+    }
+  },
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.0+cu130",
+    "torchvision": "0.29.0+cu130",
+    "transformers": "5.17.0",
+    "peft": "0.21.0",
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "pillow": "12.3.0",
+    "requests": "2.34.2",
+    "huggingface-hub": "1.33.0",
+    "filelock": "3.32.3"
+  }
+}
