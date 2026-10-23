@@ -40,11 +40,11 @@ experiments that use those providers directly.
 
 ## 3. Download the Dataset
 
-```bash
-dotenv run --no-override -- hf download Media-scope/mediascope-clustered --repo-type dataset --revision ea1f7ec37e90411502385ebb7fc5a1106f58a1c2 --local-dir ../data/mediascope-clustered
-```
+The dataset is available on request. Fill in the
+[data request form](https://docs.google.com/forms/d/e/1FAIpQLSdnoeXtb-zadofX1-l1wmFWRLhq-wp1K2cRzNh70SbnASQ-mA/viewform)
+and we will email you a link to mediascope-clustered.zip. Unzip it into
+../data so that the dataset is in ../data/mediascope-clustered where all commands below expect it.
 
-This uses the supplied train/test split without regenerating it.
 
 ## 4. Run Experiments
 
